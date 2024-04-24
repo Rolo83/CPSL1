@@ -7,21 +7,41 @@ int t2 = 1;
 int next_term = t1 + t2;
 int max_terms = 8;
 
+//0, 1, 1, 2, 3, 5, 8, 13, 21...
+//n = 0, ans = 0
+//n = 1, ans = 1
+//n = 2, ans (0+1) = 1
+//n = 3, ans (1+1) = 2
+//.
 
 
 
-   //    0, 1, 1, 2, 3, 5, 8, 13, 21... 
+
+int fib(int n) {
+    // n is the nth term result
+    if(n == 0 || n == 1)
+        return n;
+    else
+        return (fib(n-1) + fib(n-2));
+                
+
+
+}
+
+    
 
 
 int main()
 {
+
     //this is the main function
-    printf("Fibonacchi sequence: %d, %d, ", t1, t2);
-    for(int i=3; i<max_terms; i++){
-        printf("%d, ", next_term);
-        t1 = t2;
-        t2 = next_term;
-        next_term = t1 + t2;
+    printf("Hello, lab program 1 using recursive functions \r\n");
+
+    for(int i=0; i<max_terms; i++){
+        printf("%d, ", fib(i));
+        
+
+       
 
     }
 
